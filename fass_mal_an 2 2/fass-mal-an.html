@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>fass_mal_an</title>
+</head>
+<style>
+body {
+font : 100%/1.3 Verdana,Helvetica,sans-serif;
+
+margin:0 auto;
+color : #ff0000;
+background:#ADA189;
+text-align:center;
+display:flex;
+flex-wrap:wrap;
+padding:5%;
+}
+#holder {
+   max-width:60rem;
+   margin:0 auto;
+   background:#BDBDBD;
+   width:100%;
+   padding:%;
+}
+#bild1{ border-style: groove; width : 60%}
+#aktdatum {border-style: groove; color : #000000}
+</style>
+
+<body>
+<header>
+<p id="aktdatum"><h1>Fass mein Bild nur ein mal mit der Maus an DU. потрогай хоть раз меня мышкой и получишь</h1>
+</p>
+</header>
+<div id="holder">
+<img src="images/ruhig.jpg" id="bild1"
+           onmouseover="austauschen(this.id,'images/sterva.jpg')"
+           onmouseout="austauschen(this.id,'images/ruhig.jpg')">
+  <script>
+    function austauschen(id,quelle) {
+    	document.getElementById(id).src= quelle;
+  }
+  </script>
+
+<script>
+ var datum= new Date();
+ var stunde= datum.getHours();
+ var minuten= datum.getMinutes();
+ var tag= datum.getDate();
+ var monat = datum.getMonth()+1;
+ var jahr= datum.getFullYear();
+ var gruessen;
+ //stunde= 3;
+ if (stunde >= 4&& stunde <=12) {
+     gruessen = "Guten Morgen Besucher es ist ";
+}
+else if (stunde >=17 && stunde <=23) {
+gruessen= "Guten Abend Besucher es ist ";
+}
+else { 
+gruessen= "Guten Tag es ist ";
+}
+ document.getElementById("aktdatum").innerHTML= gruessen +stunde+". Uhr und "+minuten+". Minuten "+tag+"."+monat+"."+jahr+".";
+ </script>
+ </div>
+ 
+</body>
+
+</html>
